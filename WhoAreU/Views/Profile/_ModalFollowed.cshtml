@@ -1,0 +1,17 @@
+﻿@model IEnumerable<ApplicationUser>
+<div class="modal fade" id="FollowedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                @foreach (var item in Model)
+                {
+                    <div class="row mb-1 pl-3 text-center">
+                            <img src="@item.AvatarImage" alt="Alternate Text" class="mr-3" height="30" width="30"/>
+                            <a asp-controller="Profile" asp-action="@item.UserName">@item.UserName</a>
+                    </div>
+                    <hr />
+                }
+            </div>
+        </div>
+    </div>
+</div>

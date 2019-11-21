@@ -1,0 +1,15 @@
+﻿@if (Model.IsFollowed == null) { }
+else if (!(bool)Model.IsFollowed)
+{
+    <form method="post" asp-controller="Profile" asp-action="Follow">
+        <input type="text" name="shouldFollowUser" value="@Model.Username" hidden />
+        <input class="btn btn-primary" type="submit" name="Follow" value="Follow" />
+    </form>
+}
+else
+{
+    <form method="post" asp-controller="Profile" asp-action="Unfollow">
+        <input type="text" name="shouldUnfollowUser" value="@Model.Username" hidden />
+        <input class="btn btn-primary" type="submit" name="Unfollow" value="Unfollow" />
+    </form>
+}
